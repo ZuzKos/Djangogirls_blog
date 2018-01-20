@@ -1,35 +1,47 @@
+{% load staticfiles %}
 <html>
     <head>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <title>Young coder blog</title>
     </head>
     <body>
-        <div>
+        <div class="page-header">
             <h1><a href="/">Young coder blog</a></h1>
         </div>
 
-      {% for post in posts %}
-            <div>
-                <p>published: {{ post.published_date }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
-      {% endfor %}
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                      <div class="post">
+                          <div class="date">
+                              <p>published: {{ post.published_date }}</p>
+                          </div>
+                            <h1><a href="">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                          </div>
+                      {% endfor %}
+                  </div>
+              </div>
+          </div>
 
         <div>
-            <p>published: 20.01.2018, 15:34</p>
             <h2><a href="">O mne</a></h2>
             <p>Rozhodla som sa zmenit svoj zivot a zdielat s vami, ako to prebieha</p>
         </div>
 
         <div>
-            <p>published: 20.01.2018, 15:38</p>
+            <p>published: 20.01.2018, 15:34</p>
             <h2><a href="">Intro</a></h2>
             <p>Za touto zmenou stoji najma program minitechmba.org a ludia s nim spojeni, takze googlite a dozviete sa viac :)</p>
         </div>
 
         <div>
             <p>published: 20.01.2018, 15:38</p>
-            <h2><a href="">Pokracovanie</a></h2>
+            <h2><a href="">Pokračovanie</a></h2>
             <p>Na dalsom obsahu stranky sa stale pracuje</p>
         </div>
     </body>
