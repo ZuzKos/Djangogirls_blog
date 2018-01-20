@@ -7,6 +7,14 @@
             <h1><a href="/">Young coder blog</a></h1>
         </div>
 
+      {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+      {% endfor %}
+
         <div>
             <p>published: 20.01.2018, 15:34</p>
             <h2><a href="">O mne</a></h2>
@@ -17,6 +25,12 @@
             <p>published: 20.01.2018, 15:38</p>
             <h2><a href="">Intro</a></h2>
             <p>Za touto zmenou stoji najma program minitechmba.org a ludia s nim spojeni, takze googlite a dozviete sa viac :)</p>
+        </div>
+
+        <div>
+            <p>published: 20.01.2018, 15:38</p>
+            <h2><a href="">Pokracovanie</a></h2>
+            <p>Na dalsom obsahu stranky sa stale pracuje</p>
         </div>
     </body>
 </html>
